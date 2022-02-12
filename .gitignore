@@ -1,0 +1,7 @@
+.idea/
+target/
+screenshots/
+*.class
+*.iml
+*.log
+config.properties/
