@@ -15,7 +15,7 @@ public class PageAuth {
     public SelenideElement login = $(By.cssSelector("#loginform-login"));
     public SelenideElement password = $(By.cssSelector("#loginform-password"));
     public SelenideElement buttonLogin = $(By.cssSelector("#buttonLogin"));
-    public SelenideElement allertAfterInvalidPassword = $(By.xpath("//p[text()='Возможно, выбрана другая раскладка клавиатуры или нажата клавиша «Caps Lock».']"));
+    public SelenideElement allertAfterInvalidPassword = $(By.xpath("//p[starts-with(text(), 'Неверно указаны данные для входа в')]"));
 
     public void setLogin(String login){
         log.info("Вводим логин");
@@ -35,8 +35,7 @@ public class PageAuth {
     }
 
     public void checkAllertAfterInvalidPassword(){
-        log.info("Проверяем наличие текста \"Возможно, выбрана другая раскладка клавиатуры или нажата клавиша \"Caps Lock\".\"");
-        //По тексту "Неверно указаны данные для входа в систему." не могу найти xPath или cssSelector
+        log.info("Проверяем наличие текста \"Неверно указаны данные для входа в систему.\"");
         allertAfterInvalidPassword.shouldBe(Condition.enabled);
     }
 

@@ -4,4 +4,4 @@ screenshots/
 *.class
 *.iml
 *.log
-resources/config.properties
+resources/
